@@ -1,0 +1,50 @@
+<template>
+    <div class="gamepiece" v-on:click="$emit('character-clicked', character.name)"   >
+        <img 
+            :src="'/images/characters/' + character.name + '.png'"
+        >
+    </div>
+</template>
+
+
+<script>
+export default {
+    name: 'GamePiece',
+
+    props: {
+        character: Object
+    },
+
+    data: () => {
+        return {
+
+        }
+    },
+}
+</script>
+
+
+<style scoped>
+.gamepiece {
+    width: 170px;
+    height: 170px;
+    border: 5px solid #f1f1f1;
+    margin: 8px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.gamepiece:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+    box-shadow: 0 7px 20px rgba(255, 255, 255, .9), 0 10px 10px rgba(255, 255, 255, .22);
+    transform: scale(1.05);
+    transition: 0.1s;
+}
+
+.gamepiece img {
+    width: 100%;
+    height: 100%;
+}
+
+
+</style>
